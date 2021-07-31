@@ -1,0 +1,99 @@
+<mat-paginator [length]="length"
+               [pageSize]="size"
+               [pageIndex]="page"
+               [pageSizeOptions]="[10]"
+               (page)="pageChanged($event)">
+</mat-paginator>
+
+<!--  <div class="example-action-buttons">-->
+<!--    <button mat-button (click)="accordion.openAll()">Expand All</button>-->
+<!--    <button mat-button (click)="accordion.closeAll()">Collapse All</button>-->
+<!--  </div>-->
+
+    <mat-accordion class="example-headers-align">
+      <mat-expansion-panel *ngFor="let person of people;" expanded="false" (opened)="films = []; species = []; vehicles = []; starships = []" >
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            <mat-icon color = "primary">account_circle</mat-icon>
+          </mat-panel-description>
+          <mat-panel-title>{{person.name}}</mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <div mat-subheader><mat-icon mat-list-icon>perm_identity_outlined</mat-icon> Personal Info</div>
+          <mat-list-item >
+            <div mat-line><span>Height:</span><span class="example-spacer"></span> {{person.height}}</div>
+            <div mat-line><span>Mass:</span><span class="example-spacer"></span> {{person.mass}}</div>
+            <div mat-line><span>Hair Color:</span><span class="example-spacer"></span> {{person.hair_color}}</div>
+            <div mat-line><span>Skin Color:</span><span class="example-spacer"></span> {{person.skin_color}}</div>
+            <div mat-line><span>Eye Color:</span><span class="example-spacer"></span> {{person.eye_color}}</div>
+            <div mat-line><span>Birth Year:</span><span class="example-spacer"></span> {{person.birth_year}} </div>
+            <div mat-line><span>Gender:</span><span class="example-spacer"></span> {{person.gender}}</div>
+          </mat-list-item>
+        </mat-list>
+        <mat-divider></mat-divider>
+        <mat-list *ngIf="films">
+          <div mat-subheader (click)="getFilms(person.films)"><mat-icon mat-list-icon>movie_creation_outlined</mat-icon>Films</div>
+          <mat-list-item *ngFor="let film of films" >
+            <div mat-line><span>Title:</span><span class="example-spacer"></span> {{film.title}}</div>
+            <div mat-line><span>Episode:</span><span class="example-spacer"></span> {{film.episode_id}}</div>
+            <div mat-line><span>Opening Crawl:</span><span class="example-spacer"></span> {{film.opening_crawl}}</div>
+            <div mat-line><span>Director:</span><span class="example-spacer"></span> {{film.director}}</div>
+            <div mat-line><span>Producer:</span><span class="example-spacer"></span> {{film.producer}}</div>
+          </mat-list-item>
+        </mat-list>
+        <mat-divider></mat-divider>
+        <mat-list *ngIf="species">
+          <div mat-subheader (click)="getSpecies(person.species)"><mat-icon mat-list-icon>pets_sharp</mat-icon>Species</div>
+          <mat-list-item *ngFor="let specie of species" >
+            <div mat-line><span>Name:</span><span class="example-spacer"></span> {{specie.name}}</div>
+            <div mat-line><span>Classification:</span><span class="example-spacer"></span> {{specie.classification}}</div>
+            <div mat-line><span>Designation:</span><span class="example-spacer"></span> {{specie.designation}}</div>
+            <div mat-line><span>Average Height:</span><span class="example-spacer"></span> {{specie.average_height}}</div>
+            <div mat-line><span>Skin Colors:</span><span class="example-spacer"></span> {{specie.skin_colors}}</div>
+            <div mat-line><span>Hair Colors:</span><span class="example-spacer"></span> {{specie.hair_colors}}</div>
+            <div mat-line><span>Eye Colors:</span><span class="example-spacer"></span> {{specie.eye_colors}}</div>
+            <div mat-line><span>Average Lifespan:</span><span class="example-spacer"></span> {{specie.average_lifespan}}</div>
+            <div mat-line><span>Language:</span><span class="example-spacer"></span> {{specie.language}}</div>
+          </mat-list-item>
+        </mat-list>
+        <mat-divider></mat-divider>
+        <mat-list *ngIf="vehicles">
+          <div mat-subheader (click)="getVehicles(person.vehicles)"><mat-icon mat-list-icon>drive_eta</mat-icon>Vehicles</div>
+          <mat-list-item *ngFor="let vehicle of vehicles" >
+            <div mat-line><span>Cargo Capacity:</span><span class="example-spacer"></span> {{vehicle.cargo_capacity}}</div>
+            <div mat-line><span>Consumables:</span><span class="example-spacer"></span> {{vehicle.consumables}}</div>
+            <div mat-line><span>Cost in Credits:</span><span class="example-spacer"></span> {{vehicle.cost_in_credits}}</div>
+            <div mat-line><span>Crew:</span><span class="example-spacer"></span> {{vehicle.crew}}</div>
+            <div mat-line><span>Length:</span><span class="example-spacer"></span> {{vehicle.length}}</div>
+            <div mat-line><span>Manufacturer:</span><span class="example-spacer"></span> {{vehicle.manufacturer}}</div>
+            <div mat-line><span>Max Atmosphering Speed:</span><span class="example-spacer"></span> {{vehicle.max_atmosphering_speed}}</div>
+            <div mat-line><span>Model:</span><span class="example-spacer"></span> {{vehicle.model}}</div>
+            <div mat-line><span>Name:</span><span class="example-spacer"></span> {{vehicle.name}}</div>
+            <div mat-line><span>Passengers:</span><span class="example-spacer"></span> {{vehicle.passengers}}</div>
+            <div mat-line><span>Vehicle Class:</span><span class="example-spacer"></span> {{vehicle.vehicle_class}}</div>
+          </mat-list-item>
+        </mat-list>
+        <mat-divider></mat-divider>
+        <mat-list *ngIf="starships">
+          <div mat-subheader (click)="getStarships(person.starships)"><mat-icon mat-list-icon>local_activity</mat-icon>Starships</div>
+          <mat-list-item *ngFor="let starship of starships" >
+            <div mat-line><span>MGLT:</span><span class="example-spacer"></span> {{starship.MGLT}}</div>
+            <div mat-line><span>Hyperdrive Rating:</span><span class="example-spacer"></span> {{starship.hyperdrive_rating}}</div>
+            <div mat-line><span>Cargo Capacity:</span><span class="example-spacer"></span> {{starship.cargo_capacity}}</div>
+            <div mat-line><span>Consumables:</span><span class="example-spacer"></span> {{starship.consumables}}</div>
+            <div mat-line><span>Cost in Credits:</span><span class="example-spacer"></span> {{starship.cost_in_credits}}</div>
+            <div mat-line><span>Crew:</span><span class="example-spacer"></span> {{starship.crew}}</div>
+            <div mat-line><span>Length:</span><span class="example-spacer"></span> {{starship.length}}</div>
+            <div mat-line><span>Manufacturer:</span><span class="example-spacer"></span> {{starship.manufacturer}}</div>
+            <div mat-line><span>Max Atmosphering Speed:</span><span class="example-spacer"></span> {{starship.max_atmosphering_speed}}</div>
+            <div mat-line><span>Model:</span><span class="example-spacer"></span> {{starship.model}}</div>
+            <div mat-line><span>Name:</span><span class="example-spacer"></span> {{starship.name}}</div>
+            <div mat-line><span>Passengers:</span><span class="example-spacer"></span> {{starship.passengers}}</div>
+            <div mat-line><span>Starship Class:</span><span class="example-spacer"></span> {{starship.starship_class}}</div>
+          </mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+
+
