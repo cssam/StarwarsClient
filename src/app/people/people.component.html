@@ -31,8 +31,11 @@
           </mat-list-item>
         </mat-list>
         <mat-divider></mat-divider>
+        <div mat-subheader (click)="getFilms(person.films)">
+          <mat-icon matBadge="{{person.films.length}}" matBadgeColor="warn" mat-list-icon>movie_creation_outlined</mat-icon>
+          &nbsp; Films
+        </div>
         <mat-list *ngIf="films">
-          <div mat-subheader (click)="getFilms(person.films)"><mat-icon mat-list-icon>movie_creation_outlined</mat-icon>Films</div>
           <mat-list-item *ngFor="let film of films" >
             <div mat-line><span>Title:</span><span class="example-spacer"></span> {{film.title}}</div>
             <div mat-line><span>Episode:</span><span class="example-spacer"></span> {{film.episode_id}}</div>
@@ -42,8 +45,10 @@
           </mat-list-item>
         </mat-list>
         <mat-divider></mat-divider>
+        <div mat-subheader (click)="getSpecies(person.species)">
+          <mat-icon matBadge="{{person.species.length}}"  mat-list-icon>pets_sharp</mat-icon>
+          &nbsp; Species</div>
         <mat-list *ngIf="species">
-          <div mat-subheader (click)="getSpecies(person.species)"><mat-icon mat-list-icon>pets_sharp</mat-icon>Species</div>
           <mat-list-item *ngFor="let specie of species" >
             <div mat-line><span>Name:</span><span class="example-spacer"></span> {{specie.name}}</div>
             <div mat-line><span>Classification:</span><span class="example-spacer"></span> {{specie.classification}}</div>
@@ -57,9 +62,11 @@
           </mat-list-item>
         </mat-list>
         <mat-divider></mat-divider>
+        <div mat-subheader (click)="getVehicles(person.vehicles)">
+          <mat-icon matBadge="{{person.vehicles.length}}" matBadgeColor="accent" mat-list-icon>drive_eta</mat-icon>
+          &nbsp; Vehicles</div>
         <mat-list *ngIf="vehicles">
-          <div mat-subheader (click)="getVehicles(person.vehicles)"><mat-icon mat-list-icon>drive_eta</mat-icon>Vehicles</div>
-          <mat-list-item *ngFor="let vehicle of vehicles" >
+           <mat-list-item *ngFor="let vehicle of vehicles" >
             <div mat-line><span>Cargo Capacity:</span><span class="example-spacer"></span> {{vehicle.cargo_capacity}}</div>
             <div mat-line><span>Consumables:</span><span class="example-spacer"></span> {{vehicle.consumables}}</div>
             <div mat-line><span>Cost in Credits:</span><span class="example-spacer"></span> {{vehicle.cost_in_credits}}</div>
@@ -74,8 +81,10 @@
           </mat-list-item>
         </mat-list>
         <mat-divider></mat-divider>
+        <div mat-subheader (click)="getStarships(person.starships)">
+          <mat-icon matBadge="{{person.starships.length}}" matBadgeColor="primary" mat-list-icon>local_activity</mat-icon>
+          &nbsp; Starships</div>
         <mat-list *ngIf="starships">
-          <div mat-subheader (click)="getStarships(person.starships)"><mat-icon mat-list-icon>local_activity</mat-icon>Starships</div>
           <mat-list-item *ngFor="let starship of starships" >
             <div mat-line><span>MGLT:</span><span class="example-spacer"></span> {{starship.MGLT}}</div>
             <div mat-line><span>Hyperdrive Rating:</span><span class="example-spacer"></span> {{starship.hyperdrive_rating}}</div>

@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: starwarsclient-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+    cert-manager.io/issuer: "letsencrypt-staging-issuer-account-key"
+spec:
+  tls:
+  - hosts:
+    - "starwarsclient.hibersoft.com"
+    secretName: "starwarsclient-hibersoft-com-tls-acme"
+  rules:
+  - host: starwarsclient.hibersoft.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: portal-service
+          servicePort: 80

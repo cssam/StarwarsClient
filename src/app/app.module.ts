@@ -37,7 +37,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { SpeciesComponent } from './species/species.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { StarshipsComponent } from './starships/starships.component';
-
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -71,6 +71,7 @@ import { StarshipsComponent } from './starships/starships.component';
     MatListModule,
     MatPaginatorModule,
     MatExpansionModule,
+    MatBadgeModule
   ],
   providers: [CookieService, StartwarsApiService],
   bootstrap: [AppComponent]

@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/people']);
   }
 
-  movies(): void {
-    this.router.navigate(['/movies']);
+  films(): void {
+    this.router.navigate(['/films']);
   }
 }
