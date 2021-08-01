@@ -9,7 +9,7 @@ ENV PATH /StarwarsClient/node_modules/.bin:$PATH
 # install and cache app dependencies
 COPY package.json /StarwarsClient/package.json
 RUN npm install
-RUN npm install -g @angular/cli@11.2.13
+RUN npm install -g @angular/cli@12.1.4
 
 # add app
 COPY . /StarwarsClient
