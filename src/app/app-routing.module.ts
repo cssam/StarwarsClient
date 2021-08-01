@@ -6,6 +6,7 @@ import {PeopleComponent} from './people/people.component';
 import {FilmsComponent} from './films/films.component';
 
 const routes: Routes = [
+  { path: '/', component: DashboardComponent},
   { path: 'dashboard', component: DashboardComponent},
   { path: 'planets', component: PlanetsComponent},
   { path: 'people', component: PeopleComponent},

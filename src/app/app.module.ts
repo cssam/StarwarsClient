@@ -18,8 +18,6 @@ import {CookieService} from 'ngx-cookie-service';
 import { StartwarsApiService} from './services/startwars-api.service';
 
 // ui
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
@@ -55,8 +53,6 @@ import { MatBadgeModule } from '@angular/material/badge';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    FlexLayoutModule,
-    MatToolbarModule,
     MatInputModule,
     MatCardModule,
     MatMenuModule,
