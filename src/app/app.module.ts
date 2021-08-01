@@ -37,6 +37,7 @@ import { VehiclesComponent } from './vehicles/vehicles.component';
 import { StarshipsComponent } from './starships/starships.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatRippleModule } from '@angular/material/core';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { MatRippleModule } from '@angular/material/core';
     MatPaginatorModule,
     MatExpansionModule,
     MatBadgeModule,
-    MatRippleModule
+    MatRippleModule,
+    MatTabsModule
   ],
   providers: [CookieService, StartwarsApiService],
   bootstrap: [AppComponent]
