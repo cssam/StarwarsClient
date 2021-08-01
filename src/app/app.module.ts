@@ -36,6 +36,7 @@ import { SpeciesComponent } from './species/species.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { StarshipsComponent } from './starships/starships.component';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatRippleModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatListModule,
     MatPaginatorModule,
     MatExpansionModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatRippleModule
   ],
   providers: [CookieService, StartwarsApiService],
   bootstrap: [AppComponent]

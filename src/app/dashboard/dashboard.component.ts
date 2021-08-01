@@ -8,6 +8,8 @@ import {Router} from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
+  ripple_color = '#498cff';
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
