@@ -14,7 +14,6 @@ app.use(express.static('./dist/StarwarsClient'));
 
 app.get('/*', (req, res) =>
   res.sendFile('index.html', {root: 'dist/StarwarsClient/'}),
-  res.sendFile('assets/images/logo.png', {root: 'dist/StarwarsClient/assets/images/logo.png'}),
 );
 
 app.listen(process.env.PORT || 8080);
