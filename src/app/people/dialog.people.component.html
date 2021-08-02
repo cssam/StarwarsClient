@@ -1,0 +1,37 @@
+<mat-tab-group dynamicHeight>
+  <mat-tab label= {{person.name}}  *ngFor="let person of people;" expanded="false">
+    <mat-list>
+      <div mat-subheader><mat-icon mat-list-icon>perm_identity_outlined</mat-icon> Personal Info</div>
+      <mat-list-item >
+        <div mat-line><span>Height:</span><span class="example-spacer"></span> {{person.height}}</div>
+        <div mat-line><span>Mass:</span><span class="example-spacer"></span> {{person.mass}}</div>
+        <div mat-line><span>Hair Color:</span><span class="example-spacer"></span> {{person.hair_color}}</div>
+        <div mat-line><span>Skin Color:</span><span class="example-spacer"></span> {{person.skin_color}}</div>
+        <div mat-line><span>Eye Color:</span><span class="example-spacer"></span> {{person.eye_color}}</div>
+        <div mat-line><span>Birth Year:</span><span class="example-spacer"></span> {{person.birth_year}} </div>
+        <div mat-line><span>Gender:</span><span class="example-spacer"></span> {{person.gender}}</div>
+      </mat-list-item>
+    </mat-list>
+    <mat-divider></mat-divider>
+    <div mat-subheader>
+      <mat-icon matBadge="{{person.films.length}}" matBadgeColor="warn" mat-list-icon>movie_creation_outlined</mat-icon>
+      &nbsp; Films
+    </div>
+    <mat-divider></mat-divider>
+    <div mat-subheader>
+      <mat-icon matBadge="{{person.species.length}}"  mat-list-icon>pets_sharp</mat-icon>
+      &nbsp; Species</div>
+    <mat-divider></mat-divider>
+    <div mat-subheader>
+      <mat-icon matBadge="{{person.vehicles.length}}" matBadgeColor="accent" mat-list-icon>drive_eta</mat-icon>
+      &nbsp; Vehicles</div>
+
+    <mat-divider></mat-divider>
+    <div mat-subheader>
+      <mat-icon matBadge="{{person.starships.length}}" matBadgeColor="primary" mat-list-icon>local_activity</mat-icon>
+      &nbsp; Starships</div>
+  </mat-tab>
+</mat-tab-group>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PeopleComponent } from './people/people.component';
 import { FilmsComponent } from './films/films.component';
 import { PlanetsComponent } from './planets/planets.component';
+import { DialogFilmsComponent } from './films/dialog.films.component';
 
 // services
 import {CookieService} from 'ngx-cookie-service';
@@ -38,6 +39,9 @@ import { StarshipsComponent } from './starships/starships.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatRippleModule } from '@angular/material/core';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
+import {DialogPeopleComponent} from './people/dialog.people.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +52,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     PlanetsComponent,
     SpeciesComponent,
     VehiclesComponent,
-    StarshipsComponent
+    StarshipsComponent,
+    DialogFilmsComponent,
+    DialogPeopleComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +77,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatExpansionModule,
     MatBadgeModule,
     MatRippleModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [CookieService, StartwarsApiService],
   bootstrap: [AppComponent]

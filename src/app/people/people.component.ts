@@ -7,6 +7,7 @@ import {Film} from '../films/Film';
 import {Specie} from '../species/Specie';
 import {Starship} from '../starships/Starship';
 import {Vehicle} from "../vehicles/Vehicle";
+import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-people',
@@ -28,7 +29,10 @@ export class PeopleComponent implements OnInit {
   starships: Starship[] = [];
   vehicles: Vehicle[] = [];
 
-  constructor(private router: Router, private startwarsApiService: StartwarsApiService) {
+  horizontalPosition: MatSnackBarHorizontalPosition = 'start';
+  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+
+  constructor(private router: Router, private startwarsApiService: StartwarsApiService, private snackBar: MatSnackBar) {
   }
 
   ngOnInit(): void {
@@ -61,6 +65,12 @@ export class PeopleComponent implements OnInit {
   }
 
   getFilms(urls: [string]): any {
+    if (urls.length < 1) {
+      this.snackBar.open('No Films ', 'Close',
+        {horizontalPosition: this.horizontalPosition, verticalPosition: this.verticalPosition}
+      );
+      return;
+    }
     const films: Film[] = [];
     for (const url of urls) {
       this.startwarsApiService.getFromDirectEndpoint(url).subscribe((res) => {
@@ -73,6 +83,12 @@ export class PeopleComponent implements OnInit {
   }
 
   getSpecies(urls: [string]): any {
+    if (urls.length < 1) {
+      this.snackBar.open('No Species ', 'Close',
+        {horizontalPosition: this.horizontalPosition, verticalPosition: this.verticalPosition}
+      );
+      return;
+    }
     const species: Specie[] = [];
     for (const url of urls) {
       this.startwarsApiService.getFromDirectEndpoint(url).subscribe((res) => {
@@ -85,6 +101,12 @@ export class PeopleComponent implements OnInit {
   }
 
   getStarships(urls: [string]): any {
+    if (urls.length < 1) {
+      this.snackBar.open('No Starships ', 'Close',
+        {horizontalPosition: this.horizontalPosition, verticalPosition: this.verticalPosition}
+      );
+      return;
+    }
     const starships: Starship[] = [];
     for (const url of urls) {
       this.startwarsApiService.getFromDirectEndpoint(url).subscribe((res) => {
@@ -97,6 +119,12 @@ export class PeopleComponent implements OnInit {
   }
 
   getVehicles(urls: [string]): any {
+    if (urls.length < 1) {
+      this.snackBar.open('No Vehicles ', 'Close',
+        {horizontalPosition: this.horizontalPosition, verticalPosition: this.verticalPosition}
+      );
+      return;
+    }
     const vehicles: Vehicle[] = [];
     for (const url of urls) {
       this.startwarsApiService.getFromDirectEndpoint(url).subscribe((res) => {

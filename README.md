@@ -59,7 +59,7 @@ At expand you will see
 Once click on Films
 ![alt_tag](https://user-images.githubusercontent.com/6191308/127859776-5f5f0ebd-47e4-47e4-8e99-f9cdcb2d2987.png)
 
-Similarly you can see Species, Vehicles, Starships of each Person
+Similarly you can see Species, Vehicles, Starships of each Person. SnackBar appears if no content.
 
 #####Angular Material components used here
 * mat-paginator
@@ -71,6 +71,7 @@ Similarly you can see Species, Vehicles, Starships of each Person
 * mat-divider
 * matBadge
 * matBadgeColor
+* MatSnackBar
 
 
 ---
@@ -110,7 +111,7 @@ At expand you will see
 
 ![alt tag](https://user-images.githubusercontent.com/6191308/127865379-f07374a0-c890-44f2-832d-6cf48c146cb4.png)
 
-Again it shows number of records for Films and Residence but I didn't add loading since I did at Peoples page.
+Again it shows number of records for Films and Residence. Loading titles of them are added using dialog.
 
 #####Angular Material components used here
 * mat-paginator
@@ -118,6 +119,8 @@ Again it shows number of records for Films and Residence but I didn't add loadin
 * mat-cell
 * mat-header-row
 * mat-row
+* MatSnackBar
+* MatDialog
 
 ---
 

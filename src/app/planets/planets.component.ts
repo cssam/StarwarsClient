@@ -4,6 +4,12 @@ import {StartwarsApiService} from '../services/startwars-api.service';
 import {MatTableDataSource} from '@angular/material/table';
 import {Planet} from './Planet';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
+import {Film} from '../films/Film';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {DialogFilmsComponent} from '../films/dialog.films.component';
+import {Person} from '../people/Person';
+import {DialogPeopleComponent} from '../people/dialog.people.component';
 
 @Component({
   selector: 'app-planets',
@@ -27,8 +33,11 @@ export class PlanetsComponent implements OnInit {
   page = 1;
   size = 10;
   length = 0;
+  horizontalPosition: MatSnackBarHorizontalPosition = 'start';
+  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
-  constructor(private router: Router, private startwarsApiService: StartwarsApiService) { }
+  // tslint:disable-next-line:max-line-length
+  constructor(private router: Router, private startwarsApiService: StartwarsApiService, private snackBar: MatSnackBar, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getPlanets(this.page);
@@ -51,4 +60,55 @@ export class PlanetsComponent implements OnInit {
     this.loading = false;
   }
 
+  openSnackBar(message: string, action: string): any {
+    this.snackBar.open(message, action, {horizontalPosition: this.horizontalPosition, verticalPosition: this.verticalPosition});
+  }
+
+  getFilms(urls: [string]): any {
+    if ( urls.length < 1){
+      this.snackBar.open('No Films: ', 'Close',
+        {horizontalPosition: this.horizontalPosition, verticalPosition: this.verticalPosition}
+      );
+      return;
+    } else {
+      const films: Film[] = [];
+      for (const url of urls) {
+        this.startwarsApiService.getFromDirectEndpoint(url).subscribe((res) => {
+          if (res.status === 200){
+            films.push(res.body as Film);
+            // filmTitles = films.map((element) => element.title).join('<br/>');
+          }
+        });
+      }
+      this.openFilmDialog(films);
+      return;
+    }
+  }
+  openFilmDialog(data: any): any {
+    this.dialog.open(DialogFilmsComponent, {data});
+  }
+
+  getPeople(residents: [string]): any {
+    if ( residents.length < 1){
+      this.snackBar.open('No Residents: ', 'Close',
+        {horizontalPosition: this.horizontalPosition, verticalPosition: this.verticalPosition}
+      );
+      return;
+    } else {
+      const people: Person[] = [];
+      for (const resident of residents) {
+        this.startwarsApiService.getFromDirectEndpoint(resident).subscribe((res) => {
+          if (res.status === 200){
+            people.push(res.body as Person);
+          }
+        });
+      }
+      this.openPeopleDialog(people);
+      return;
+    }
+  }
+
+  openPeopleDialog(data: any): any {
+    this.dialog.open(DialogPeopleComponent, {data});
+  }
 }

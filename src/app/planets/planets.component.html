@@ -20,9 +20,9 @@
     <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
       <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
         <p>
-        <button mat-button><mat-icon matBadge="{{element.films.length}}" matBadgeColor="primary" mat-list-icon>movie_creation_outlined</mat-icon>
+        <button mat-button><mat-icon matBadge="{{element.films.length}}" matBadgeColor="primary" mat-list-icon (click)="getFilms(element.films)">movie_creation_outlined</mat-icon>
           &nbsp;&nbsp;Films</button>
-        <button mat-button><mat-icon matBadge="{{element.residents.length}}" matBadgeColor="warn" mat-list-icon>people_alt_two_tone</mat-icon>
+        <button mat-button><mat-icon matBadge="{{element.residents.length}}" matBadgeColor="warn" mat-list-icon (click)="getPeople(element.residents)">people_alt_two_tone</mat-icon>
           &nbsp;&nbsp;Residence</button>
         </p>
 <!--        <div class="example-element-diagram">-->

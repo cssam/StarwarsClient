@@ -1,0 +1,31 @@
+<mat-tab-group dynamicHeight>
+  <mat-tab label= {{film.title}}  *ngFor="let film of films;">
+    <div class="example-large-box mat-elevation-z4">
+      <mat-card class="example-card">
+        <mat-card-header><span>Episode:</span><span class="example-spacer"></span>{{film.episode_id}}</mat-card-header>
+        <mat-card-subtitle><span>Director:</span><span class="example-spacer"></span>{{film.director}}</mat-card-subtitle>
+        <mat-card-subtitle><span>Producer:</span><span class="example-spacer"></span>{{film.producer}}</mat-card-subtitle>
+        <mat-card-content>
+          <p>
+            {{film.opening_crawl}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+      <mat-card-actions>
+        <p>
+          <button mat-button><mat-icon matBadge="{{film.starships.length}}" matBadgeColor="primary" mat-list-icon>local_activity</mat-icon>
+            &nbsp;&nbsp;Starships</button>
+          <button mat-button><mat-icon matBadge="{{film.planets.length}}" matBadgeColor="accent" mat-list-icon>language_alt_two_tone</mat-icon>
+            &nbsp;&nbsp;Planets</button>
+          <button mat-button><mat-icon matBadge="{{film.characters.length}}" matBadgeColor="warn" mat-list-icon>people_alt_two_tone</mat-icon>
+            &nbsp;&nbsp;Characters</button>
+          <button mat-button><mat-icon matBadge="{{film.species.length}}"  mat-list-icon>pets_sharp</mat-icon>
+            &nbsp;&nbsp;Species</button>
+        </p>
+      </mat-card-actions>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>
