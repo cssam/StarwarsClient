@@ -10,10 +10,10 @@ const express = require('express');
 const app = express();
 
 app.use(requireHTTPS);
-app.use(express.static('./dist/StarwarsClient'));
+app.use(express.static('./dist/starwars-client.json'));
 
 app.get('/*', (req, res) =>
-  res.sendFile('index.html', {root: 'dist/StarwarsClient/'}),
+  res.sendFile('index.html', {root: 'dist/starwars-client.json/'}),
 );
 
 app.listen(process.env.PORT || 8080);
