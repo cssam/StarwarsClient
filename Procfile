@@ -1,1 +1,1 @@
-web: node src/starwars-client.js
+web: node src/server.js
