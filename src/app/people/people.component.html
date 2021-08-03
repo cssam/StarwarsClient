@@ -13,6 +13,13 @@
 <!--    <button mat-button (click)="accordion.openAll()">Expand All</button>-->
 <!--    <button mat-button (click)="accordion.closeAll()">Collapse All</button>-->
 <!--  </div>-->
+  <mat-progress-bar
+    class="example-margin"
+    [color]="color"
+    [mode]="mode"
+    [value]="value"
+   >
+  </mat-progress-bar>
 
     <mat-accordion class="example-headers-align">
       <mat-expansion-panel *ngFor="let person of people;" expanded="false" (opened)="films = []; species = []; vehicles = []; starships = []" >

@@ -6,8 +6,10 @@ import {MatAccordion} from '@angular/material/expansion';
 import {Film} from '../films/Film';
 import {Specie} from '../species/Specie';
 import {Starship} from '../starships/Starship';
-import {Vehicle} from "../vehicles/Vehicle";
+import {Vehicle} from '../vehicles/Vehicle';
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
+import {ThemePalette} from '@angular/material/core';
+import {ProgressBarMode} from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-people',
@@ -20,7 +22,7 @@ export class PeopleComponent implements OnInit {
 
   public appError: string | undefined;
   people: Person[] = [];
-  loading = true;
+  loading = false;
   page = 1;
   size = 10;
   length = 0;
@@ -32,10 +34,16 @@ export class PeopleComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'start';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
+  // progress bar
+  color: ThemePalette = 'primary';
+  mode: ProgressBarMode = 'determinate';
+  value = 0;
+
   constructor(private router: Router, private startwarsApiService: StartwarsApiService, private snackBar: MatSnackBar) {
   }
 
   ngOnInit(): void {
+    this.loading = true;
     this.getPeopleList(this.page);
     this.loading = false;
   }
@@ -45,6 +53,7 @@ export class PeopleComponent implements OnInit {
       if (res.status === 200){
           this.people = (res.body.results as [Person]);
           this.length = res.body.count;
+          this.value = this.value +  this.people.length;
       }
     },
       error => this.appError = error);

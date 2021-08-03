@@ -30,6 +30,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatListModule} from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -72,6 +73,7 @@ import {DialogPeopleComponent} from './people/dialog.people.component';
     MatSelectModule,
     MatOptionModule,
     MatProgressSpinnerModule,
+    MatProgressBarModule,
     MatListModule,
     MatPaginatorModule,
     MatExpansionModule,
