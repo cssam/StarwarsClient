@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {StartwarsApiService} from '../services/startwars-api.service';
 import {Film} from './Film';
-import {Person} from '../people/Person';
 
 @Component({
   selector: 'app-films',

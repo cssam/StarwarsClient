@@ -26,4 +26,8 @@ export class DashboardComponent implements OnInit {
   films(): void {
     this.router.navigate(['/films']);
   }
+
+  species(): void {
+    this.router.navigate(['/species']);
+  }
 }

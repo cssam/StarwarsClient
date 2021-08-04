@@ -34,4 +34,16 @@
     </svg>
     <span>PLANETS</span>
   </div>
+
+  <div  (click)="species()" class="example-ripple-container mat-elevation-z4"
+        matRipple
+        [matRippleCentered]= true
+        [matRippleDisabled]= false
+        [matRippleUnbounded]= false
+        [matRippleRadius]= 100
+        [matRippleColor]= ripple_color >
+    <mat-icon>pets_sharp</mat-icon>
+    <span>SPECIES</span>
+  </div>
+
 </div>

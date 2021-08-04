@@ -9,6 +9,8 @@
                (page)="pageChanged($event)">
 </mat-paginator>
 
+<mat-progress-bar [value]="progresValue" ></mat-progress-bar>
+
 <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
   <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
     <th mat-header-cell *matHeaderCellDef> {{column | titlecase}} </th>

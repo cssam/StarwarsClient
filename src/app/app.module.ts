@@ -13,7 +13,11 @@ import { PeopleComponent } from './people/people.component';
 import { FilmsComponent } from './films/films.component';
 import { PlanetsComponent } from './planets/planets.component';
 import { DialogFilmsComponent } from './films/dialog.films.component';
-
+import { DialogPeopleComponent } from './people/dialog.people.component';
+import { SpeciesComponent } from './species/species.component';
+import { VehiclesComponent } from './vehicles/vehicles.component';
+import { StarshipsComponent } from './starships/starships.component';
+import { BottomsheetSpeciesComponent } from './species/bottomsheet.species.component';
 // services
 import {CookieService} from 'ngx-cookie-service';
 import { StartwarsApiService} from './services/startwars-api.service';
@@ -34,15 +38,13 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatListModule} from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { SpeciesComponent } from './species/species.component';
-import { VehiclesComponent } from './vehicles/vehicles.component';
-import { StarshipsComponent } from './starships/starships.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatRippleModule } from '@angular/material/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
-import {DialogPeopleComponent} from './people/dialog.people.component';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+
 
 @NgModule({
   declarations: [
@@ -55,7 +57,8 @@ import {DialogPeopleComponent} from './people/dialog.people.component';
     VehiclesComponent,
     StarshipsComponent,
     DialogFilmsComponent,
-    DialogPeopleComponent
+    DialogPeopleComponent,
+    BottomsheetSpeciesComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +84,8 @@ import {DialogPeopleComponent} from './people/dialog.people.component';
     MatRippleModule,
     MatTabsModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatBottomSheetModule
   ],
   providers: [CookieService, StartwarsApiService],
   bootstrap: [AppComponent]

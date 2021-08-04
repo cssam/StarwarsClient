@@ -36,6 +36,8 @@ export class PlanetsComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'start';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
+  progresValue = 0;
+
   // tslint:disable-next-line:max-line-length
   constructor(private router: Router, private startwarsApiService: StartwarsApiService, private snackBar: MatSnackBar, private dialog: MatDialog) { }
 
@@ -49,6 +51,7 @@ export class PlanetsComponent implements OnInit {
         if (res.status === 200){
           this.dataSource = (res.body.results as MatTableDataSource<Planet>);
           this.length = res.body.count;
+          this.progresValue = this.dataSource.size;
         }
       },
       error => this.appError = error);

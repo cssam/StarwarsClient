@@ -103,7 +103,7 @@ Paginator didn't use since only 6 records available.
 
 #### Planet page
 
-This page developed using Table with expandable rows with Paginator.
+This page developed using Table with expandable rows and Paginator.
 
 ![alt tag](https://user-images.githubusercontent.com/6191308/127865210-7da79298-bb1e-44a4-81bf-5960ffec13ff.png)
 
@@ -122,6 +122,24 @@ Again it shows number of records for Films and Residence. Loading titles of them
 * MatSnackBar
 * MatDialog
 
+---
+
+#### Species page
+
+This page developed using List with Bottomsheet and Paginator.
+
+![alt tag](https://user-images.githubusercontent.com/6191308/128227961-0c5f5d2d-02d5-4465-855f-0a179200f2ad.png)
+
+At expand you will see
+
+![alt_tag](https://user-images.githubusercontent.com/6191308/128227436-3c072019-0d81-40fa-8e9d-28e773297658.png)
+
+#####Angular Material components used here
+
+* mat-paginator
+* mat-list
+* MatBottomSheet
+* BottomsheetSpeciesComponent
 ---
 
 #### Theme
