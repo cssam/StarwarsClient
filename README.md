@@ -6,7 +6,7 @@
 
 #### Clone the project
 
-Clone project from git repo https://github.com/cssam/StarwarsClient
+Clone project from git repo https://github.com/cssamLabs/Lab-Anguar
 
 in to your `$HOME/sites/` folder.
 
