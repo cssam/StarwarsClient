@@ -1,4 +1,4 @@
-# Alab Angular
+# Lab Angular
 
 ## An Angular project to access Starwars backend of https://swapi.dev/ 
 
