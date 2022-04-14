@@ -6,7 +6,7 @@
 
 #### Clone the project
 
-Clone project from git repo https://github.com/cssamLabs/Lab-Anguar
+Clone project from git repo https://github.com/cssamLabs/Lab-Anguar-S3-Route53
 
 in to your `$HOME/sites/` folder.
 
