@@ -1,4 +1,4 @@
-# Lab Angular
+# Lab Angular S3 Route53
 
 ## An Angular project to access Starwars backend of https://swapi.dev/ 
 
