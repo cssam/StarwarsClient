@@ -19,7 +19,6 @@ import { VehiclesComponent } from './vehicles/vehicles.component';
 import { StarshipsComponent } from './starships/starships.component';
 import { BottomsheetSpeciesComponent } from './species/bottomsheet.species.component';
 // services
-import {CookieService} from 'ngx-cookie-service';
 import { StartwarsApiService} from './services/startwars-api.service';
 
 // ui
@@ -87,7 +86,7 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
     MatDialogModule,
     MatBottomSheetModule
   ],
-  providers: [CookieService, StartwarsApiService],
+  providers: [StartwarsApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

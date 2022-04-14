@@ -1,10 +1,10 @@
 import {HttpErrorResponse} from '@angular/common/http';
 import {throwError} from 'rxjs';
-import {CookieService} from 'ngx-cookie-service';
+
 
 export class ApiService {
 
-  constructor(protected cookieService: CookieService) {
+  constructor() {
   }
   /**
    *
@@ -25,10 +25,6 @@ export class ApiService {
     // return an observable with a user-facing error message
     return throwError(
       'Something bad happened; please try again later.');
-  }
-
-  protected hasToken(): boolean {
-    return this.cookieService.check('currentUser');
   }
 
 }

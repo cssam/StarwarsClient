@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {ApiService} from './api.service';
 import {HttpClient, HttpErrorResponse, HttpResponse} from '@angular/common/http';
-import {CookieService} from 'ngx-cookie-service';
 import {Observable} from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
 
@@ -12,8 +11,8 @@ export class StartwarsApiService extends ApiService {
 
   starwarsBaseUrl = 'https://swapi.dev/api/';
 
-  constructor(private http: HttpClient, cookieService: CookieService) {
-    super(cookieService);
+  constructor(private http: HttpClient) {
+    super();
   }
 
   getPeople(page: number): Observable<HttpResponse<any>>{
