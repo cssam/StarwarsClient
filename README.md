@@ -17,13 +17,13 @@ Install the required libraries using these commands:
 
 To build:
 ```
-> cd StarwarsClient
+> cd Lab-Anguar-S3-Route53
 > ng build 
 ```
 
 To run:
 ```
-> cd StarwarsClient
+> cd Lab-Anguar-S3-Route53
 > ng serve 
 ```
 check http://localhost:4200
@@ -32,7 +32,7 @@ check http://localhost:4200
 
 ### App Using Guide
 
-####Dashboard
+#### Dashboard
 App is routing to dashboard always
 
 Click on the top heard to load the dashboard
@@ -41,12 +41,12 @@ http://localhost:4200/dashboard
 
 ![alt tag](https://user-images.githubusercontent.com/6191308/127857830-c65ac94a-f7c9-453b-8738-d72afdb870df.png)
 
-#####Angular Material components used here
+##### Angular Material components used here are
 * mat-ripple
 
 ----
 
-####People page
+#### People page
 
 This page implemented as Accordion with Paginator.
 
@@ -61,7 +61,7 @@ Once click on Films
 
 Similarly you can see Species, Vehicles, Starships of each Person. SnackBar appears if no content.
 
-#####Angular Material components used here
+##### Angular Material components used here are
 * mat-paginator
 * mat-accordion
 * mat-expansion-panel
@@ -86,7 +86,7 @@ Paginator didn't use since only 6 records available.
 
 ![alt tag](https://user-images.githubusercontent.com/6191308/127862049-de20efd6-3fc3-4f15-91c9-1eb130eb30db.png)
 
-#####Angular Material components used here
+##### Angular Material components used here are
 * mat-tab-group
 * mat-tab
 * mat-card
@@ -113,7 +113,7 @@ At expand you will see
 
 Again it shows number of records for Films and Residence. Loading titles of them are added using dialog.
 
-#####Angular Material components used here
+##### Angular Material components used here are
 * mat-paginator
 * mat-table
 * mat-cell
@@ -134,7 +134,7 @@ At expand you will see
 
 ![alt_tag](https://user-images.githubusercontent.com/6191308/128227436-3c072019-0d81-40fa-8e9d-28e773297658.png)
 
-#####Angular Material components used here
+##### Angular Material components used here are
 
 * mat-paginator
 * mat-list
@@ -157,9 +157,36 @@ Added starwars-theme.css file and linked at angular.json file `"styles": [
 
 ## Cloud Technologies
 
+### AWS S3 deployment
+See the description of how to configure Angular app as static web site in AWS S3. [AWs S3 StaticWeb](https://AWS-Configuration-S3-StaticWeb-HostedZone)
+
+In development CMD run following to build compiled files for static web.
+
+Following command in project root will build sttaic web files.
+```
+ng build
+```
+![Angular build](https://user-images.githubusercontent.com/6191308/163465562-08bbf21d-7a0f-4bae-ac62-9af29c0049f1.png)
+
+Then goto dist/StarwarsClient folder and run aws s3 command
+```
+cd dist/StarwarsClient
+aws s3 cp . s3://starwars.hibersoft.com --recursive
+```
+![upload to s3 bucket](https://user-images.githubusercontent.com/6191308/163465937-a10f3ff8-6098-498e-a645-b9c31d048197.png)
+
+
+Hosted Site
+![hosted Angular web site](https://user-images.githubusercontent.com/6191308/163467211-151ca863-e775-4281-9a65-0854c9fdc55f.png)
+
+
+
+
 ### Hiroku Deployment
 
-I have deployed the app with Hiroku and you can access at https://starwarsclient.herokuapp.com/
+I have deployed the app with Hiroku and you can access at https://starwarsclient.herokuapp.com/.
+There are few additional steps has to take to deploy on Heroku.
+I added server.js and Procfile file to deploy on Heroku. You can find them in heroku-deployment branch.
 
 #### Hiroku Configuration
 
@@ -169,7 +196,10 @@ I have deployed the app with Hiroku and you can access at https://starwarsclient
   "path": "^0.12.7"` 
   had to added to the `package.json`
   
-### AWS/GCP/Azure Deployment
+  ![Heroku Git Branch Configuration](https://user-images.githubusercontent.com/6191308/163465134-09288f36-c3e3-4d8d-8831-28729a8f7896.png)
+
+  
+### Containerized Deployment
 
 I have added required yaml files to deploy the app in any of cloud services in
 `kube-config`.
